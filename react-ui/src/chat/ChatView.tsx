@@ -14,11 +14,18 @@ function ChatView() {
                 setUsername(formUsername)
         }
 
+        var headers = {
+                login: 'mylogin',
+                passcode: 'mypasscode',
+                // additional header
+                'client-id': 'my-client-id'
+        };
+
         return(
         <>
                 {
                         username ? 
-                        <StompSessionProvider url={"ws://127.0.0.1:8080/chapp"}>
+                        <StompSessionProvider url={"ws://127.0.0.1:8080/chapp"} connectHeaders={headers}>
                                 <Grid container>
                                         <Grid size={12}>
                                                 <ChatWindow username={username}></ChatWindow>

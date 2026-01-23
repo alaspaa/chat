@@ -1,0 +1,45 @@
+{
+	"realm": "chat",
+	"enabled": true,
+	"registrationAllowed": true,
+	"requiredCredentials": ["password"],
+	"requiredActions": [
+		{
+			"alias" : "UPDATE_PASSWORD",
+			"name" : "Update Password",
+			"providerId" : "UPDATE_PASSWORD",
+			"enabled" : false,
+			"defaultAction" : false,
+			"priority" : 30,
+			"config" : { }
+
+		}
+	],
+	"clients": [
+		{
+			"clientId": "chat-front",
+			"name": "chat-front",
+			"enabled": true,
+			"protocol": "openid-connect",
+			"redirectUris": ["*"],
+			"directAccessGrantsEnabled": true,
+			"webOrigins": ["*"]
+		}
+	],
+	"users": [
+		{
+			"username": "chatter",
+			"enabled": true,
+			"firstName": "Chatty",
+			"lastName": "Kathy",
+			"email": "chattykathy@home.org",
+			"credentials": [
+				{
+				"type": "password",
+				"value": "password"
+				}
+			],
+			"realmRoles": ["user"]
+		}
+	]
+}
